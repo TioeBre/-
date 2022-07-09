@@ -48,7 +48,7 @@ vultr经常会有活动，但是他的活动有些坑在里边，截止2022年7�
 
 因为我已经用过新用户优惠了，你没用的话可能是长这个样子
 
-![Vultr充多少送多少活动](./vutr-match-100-code.png)
+![vutr-match-100-code(./vutr-match-100-code.png)
 
 在画框这个地方输入优惠码**VULTRMATCH**（这个是充多少送多少活动的优惠码，截止2022.7.9还是这个）然后充就行了
 
@@ -98,7 +98,7 @@ wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.52/nf_2.
 
 ### 域名购买及配置
 
-***下面的过程建议善用https://mxtoolbox.com/之类的测试网站来检查那个地方配置出错了***
+***下面的过程建议善用https://mxtoolbox.com 之类的测试网站来检查那个地方配置出错了***
 
 ##### 1.域名购买
 
