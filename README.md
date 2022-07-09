@@ -2,7 +2,7 @@
 
 声明：本文仅为简单服务器搭建、网页制作和流量分发代理的一篇操作感悟，仅供学习、交流目的，请勿用于违法行为。
 
-本文全文参照https://allinfa.com/v2ray-caddy-tls-http2-plus.html，仅在几处我实际使用过程中出现的一些问题做出一些和补充。
+本文全文参照https://allinfa.com/v2ray-caddy-tls-http2-plus.html 仅在几处我实际使用过程中出现的一些问题做出一些和补充。
 
 本文主要目的分享通过v2ray、caddy、http+tls实现伪装流量隐秘的上网以绕过某些限制更快的访问github等网站。
 
