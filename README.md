@@ -48,7 +48,7 @@ vultr经常会有活动，但是他的活动有些坑在里边，截止2022年7�
 
 因为我已经用过新用户优惠了，你没用的话可能是长这个样子
 
-![vutr-match-100-code(./vutr-match-100-code.png)
+![vutr-match-100-code](./vutr-match-100-code.png)
 
 在画框这个地方输入优惠码**VULTRMATCH**（这个是充多少送多少活动的优惠码，截止2022.7.9还是这个）然后充就行了
 
