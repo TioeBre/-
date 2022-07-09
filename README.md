@@ -86,7 +86,7 @@ ssh连上你刚买的服务器，或者点开服务器详情页面，直接打�
 
 输入（除非你买的服务器不是x86_64架构的）（虽然大家应该都知道，不管ssh还是用网页自带的远程连接都是可以复制粘贴的，应该没有人会自己打字吧，并且后续要输入的东西很多哒，自己打要累死还容易错）
 
-```
+``` bash
 wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.52/nf_2.52_linux_amd64 && chmod +x nf && clear && ./nf
 ```
 
@@ -166,19 +166,19 @@ type选CNAME，名字随便写一个都行，target写上图中画圈的地方�
 
 输入，建议设定时区到香港
 
-```
+``` bash
 dpkg-reconfigure tzdata && apt update && apt -y upgrade
 ```
 
 输入，看一下输出时间和你电脑上的差的多不多，注意时区可能会不一样，只要误差在一分半内就可以，否则后续无法正常使用。
 
-```
+``` bash
 date -R
 ```
 
 如果误差超过一分半输入，引号内改成同样格式的正确时间。没有那么大误差的话跳过此步。
 
-```
+``` bash
 sudo date --set="2022-07-09 20:16:23"
 ```
 
@@ -188,7 +188,7 @@ sudo date --set="2022-07-09 20:16:23"
 
 依次输入
 
-```
+``` bash
 apt install curl -y
 apt install unzip daemon -y
 ```
@@ -199,7 +199,7 @@ apt install unzip daemon -y
 
 （大家应该会用vim吧，分界线里边的是写到对应文件里的，其他是命令行的命令）
 
-```
+``` bash
 sudo vim /etc/sysctl.conf
 
 #向文件内输入--------------------------分界线------------------------------------
@@ -271,7 +271,7 @@ ulimit -SHn 51200
 
 #### 4.安装配置caddy
 
-```
+``` bash
 #命令行依次输入
 sudo apt-get install yum
 
@@ -284,7 +284,7 @@ tar -xvf /usr/local/bin/caddy.tar -C /usr/local/bin
 rm /usr/local/bin/caddy.tar
 ```
 
-```
+``` bash
 #命令行输入可以确定caddy安装到哪了
 whereis caddy
 #输出即为caddy的位置
@@ -292,7 +292,7 @@ whereis caddy
 
 赋予caddy权限
 
-```
+``` bash
 #命令行依次输入
 chown root:root /usr/local/bin/caddy
 
@@ -301,7 +301,7 @@ chmod 755 /usr/local/bin/caddy
 
 允许caddy使用80和443端口（80是http用的，443是https的）
 
-```
+``` bash
 #命令行输入
 apt install libcap2-bin
 
@@ -310,7 +310,7 @@ setcap 'cap_net_bind_service=+ep' /usr/local/bin/caddy
 
 创建组合用户
 
-```
+``` bash
 #命令行输入
 groupadd -g 33 www-data
 
@@ -319,7 +319,7 @@ useradd -g www-data --no-user-group --home-dir /var/www --no-create-home --shell
 
 创建网页配置目录
 
-```
+``` bash
 #命令行输入（caddy配置目录）
 mkdir /etc/caddy
 
@@ -344,7 +344,7 @@ chmod 770 /var/log/caddy.log
 
 创建一个网站（简易版）
 
-```
+``` bash
 #命令行输入
 mkdir -p /var/www/html
 
@@ -373,7 +373,7 @@ vim /var/www/html/index.html
 #想弄个复杂点的网站建议在你电脑上做好之后用sftp传到服务器/var/www/html文件夹下
 ```
 
-```
+``` bash
 #设置SystemD来方便管理
 
 #命令行输入
@@ -454,7 +454,7 @@ systemctl daemon-reload
 
 #### 5.安装配置v2ray
 
-```
+``` bash
 #命令行输入（安装）
 curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
 
@@ -465,7 +465,7 @@ bash install-release.sh
 
 下面几个有注释的地方会有@1 - @4，后面会用@ + 数字来代指这个地方的内容
 
-```
+``` bash
 #命令行输入（配置）
 cp /usr/local/etc/v2ray/config.json /usr/local/etc/v2ray/config.json.last #备份以下免得配置坏了还改不回来
 
@@ -553,7 +553,7 @@ rm /usr/local/etc/v2ray/config.json && vim /usr/local/etc/v2ray/config.json
 
 #### 6.配置caddy（上边的第4步其实没配置完）
 
-```
+``` bash
 #命令行输入
 vim /etc/caddy/Caddyfile
 
@@ -598,7 +598,7 @@ chmod 644 /etc/caddy/Caddyfile
 
 查看Global API Key然后复制下来
 
-```
+``` bash
 #命令行输入
 apt install socat
 
@@ -627,7 +627,7 @@ chmod 644 /usr/local/etc/v2ray/v2ray.key
 
 #### 1.启动caddy
 
-```
+``` bash
 #命令行输入
 systemctl daemon-reload
 
@@ -645,7 +645,7 @@ journalctl --boot -u caddy.service
 
 #### 2.启动v2ray
 
-```
+``` bash
 #命令行输入
 systemctl daemon-reload
 
@@ -662,7 +662,7 @@ journalctl -u v2ray
 
 ### 防火墙
 
-```
+``` bash
 #命令行输入
 apt install ufw
 
@@ -723,7 +723,7 @@ Qv2ray
 
 ### 附录
 
-```
+``` bash
 #目录表（以下目录是默认配置的话应该会在这个地方，如果不对的话用whereis找找）
 
 #caddy程序目录	
@@ -751,7 +751,7 @@ Qv2ray
 /usr/local/share/v2ray/geoip.dat	  /usr/local/share/v2ray/geosite.dat
 ```
 
-```
+``` bash
 #命令表
 
 #更新v2ray
